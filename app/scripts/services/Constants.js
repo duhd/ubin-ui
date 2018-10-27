@@ -90,7 +90,8 @@ function constants(ENV) {
   };
 
   constants.defaultBankLoc = "MASGSGSG";
-  constants.regulator = "MASREGULATOR";
+  constants.regulator = "MASGSGSG";
+  constants.centralBank = "MASGSGSG";
   constants.MAS = "MASGSGSG";
   constants.currencySymbol = "S$";
   constants.error = "error";
