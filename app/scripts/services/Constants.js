@@ -17,7 +17,7 @@ function constants(ENV) {
 			"MASGSGSG": {
 				"host": "127.0.0.1",
 				"port": "10006",
-				"bankName": "MAS Central Bank",
+				"bankName": "SBV State Bank Vietnam",
 				"centralBank": true,
 				"regulator": false
 			},
