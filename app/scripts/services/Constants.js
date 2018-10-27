@@ -7,17 +7,17 @@ function constants(ENV) {
 	var cordaConstants = {
 		"mepsEndpoint": "http://127.0.0.1:9001",
 		"bankNodes": {
-			  "MASREGULATOR": {
-                			 	 "host": "127.0.0.1",
-                			 	 "port": "10006",
-                			 	 "bankName": "MAS Regulator",
-                			 	 "centralBank": false,
-                			 	 "regulator": true
-                			  },
+//			  "MASREGULATOR": {
+//                			 	 "host": "127.0.0.1",
+//                			 	 "port": "10006",
+//                			 	 "bankName": "MAS Regulator",
+//                			 	 "centralBank": false,
+//                			 	 "regulator": true
+//                			  },
 			"MASGSGSG": {
 				"host": "127.0.0.1",
 				"port": "10006",
-				"bankName": "SBV State Bank Vietnam",
+				"bankName": "SBV State Bank of Vietnam",
 				"centralBank": true,
 				"regulator": false
 			},
