@@ -24,7 +24,7 @@ function constants(ENV) {
 			"CSFBSGSX": {
 				"host": "127.0.0.1",
 				"port": "10009",
-				"bankName": "Credit Suisse",
+				"bankName": "Fintech",
 				"centralBank": false,
 				"regulator": false
 			},

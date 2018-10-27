@@ -10,7 +10,7 @@
 	<div class="tab-content">
 		<div id="transfer" class="tab-pane fade in active">
 			<div class="row">
-				<div class="col-sm-8">
+				<div class="col-sm-6">
 					<label for="" class="">
 						Amount
 					</label>
@@ -18,18 +18,8 @@
 						<input class="form-control" type="number" ng-model="transfer.transactionAmount">
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<label for="" class="">Priority</label>
-					<div class="radio-btn">
-						<label ng-repeat="(key, value) in priorities" class="radio-inline">
-							<input type="radio" ng-model="transfer.priority" ng-value="{{key}}" name="transfer.priority">{{value}}
-						</label>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-8">
-					<label for="" class="">To</label>
+				<div class="col-sm-6">
+					<label for="" class="">Bank</label>
 					<select class="form-control" ng-model="transfer.receiver">
 						<option value="{{value.bic}}" ng-repeat="value in counterparties | orderBy: 'bic'">
 							<!-- ng-if="thisbank != value.stashName && value.bankName"> -->
@@ -37,7 +27,39 @@
 						</option>
 					</select>
 				</div>
-				<div class="col-xs-3">
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<label for="" class="">Account Receiver</label>
+					<div class="">
+						<input class="form-control" type="text" ng-model="transfer.userReceiverAccNo">
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<label for="" class="">Account Name</label>
+					<div class="">
+						<input class="form-control" type="text" ng-model="transfer.userReceiverAccName">
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<button type="button" class="btn btn-success" ng-disabled="submitPressed" ng-click="submitQueryAccName()">
+						{{ (submitPressed == true) ? 'Quering' : 'Query Acc Name' }}
+					</button>
+				</div>
+			</div>
+			<div class="row">
+
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<label for="" class="">Priority</label>
+					<div class="radio-btn">
+						<label ng-repeat="(key, value) in priorities" class="radio-inline">
+							<input type="radio" ng-model="transfer.priority" ng-value="{{key}}" name="transfer.priority">{{value}}
+						</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
 					<button type="button" class="btn btn-success" ng-disabled="submitPressed" ng-click="submitTransfer()">
 						{{ (submitPressed == true) ? 'Submitting' : 'Submit' }}
 					</button>
