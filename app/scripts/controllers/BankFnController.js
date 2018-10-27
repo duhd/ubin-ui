@@ -32,7 +32,7 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
     	var accountReceiver = {};
     	accountReceiver.accountNo = $scope.transfer.userReceiverAccNo;
     	accountReceiver.bic = $scope.transfer.receiver;
-		httpService.post(serviceUrl.loadUrl().enquiryAccName,account).then(function (data) {
+		httpService.post(serviceUrl.loadUrl().enquiryAccName,accountReceiver).then(function (data) {
 			if (data !== constants.error) {
 				var response = angular.fromJson(data);
 				alert(data);
