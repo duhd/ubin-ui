@@ -27,7 +27,7 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 	};
 
 	$scope.submitQueryAccName = function () {
-		httpService.get(serviceUrl.loadUrl().enquiryAccName).then(function (data) {
+		httpService.post(serviceUrl.loadUrl().enquiryAccName).then(function (data) {
 			if (data !== constants.error) {
 				var response = angular.fromJson(data);
 				$scope.transfer.userReceiverAccName = response.accountName;
