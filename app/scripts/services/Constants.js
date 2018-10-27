@@ -7,13 +7,13 @@ function constants(ENV) {
 	var cordaConstants = {
 		"mepsEndpoint": "http://cordaknqx-node1.southeastasia.cloudapp.azure.com:9001",
 		"bankNodes": {
-			// "MASREGULATOR ": {
-			// 	"host": "cordaknqx-node0.southeastasia.cloudapp.azure.com",
-			// 	"port": "10004",
-			// 	"bankName": "Monetary Authority of Singapore Regulator",
-			// 	"centralBank": false,
-			// 	"regulator": true
-			// },
+			 "MASREGULATOR ": {
+			 	"host": "cordaknqx-node0.southeastasia.cloudapp.azure.com",
+			 	"port": "10004",
+			 	"bankName": "Monetary Authority of Singapore Regulator",
+			 	"centralBank": false,
+			 	"regulator": true
+			 },
 			"MASGSGSG": {
 				"host": "cordaknqx-node1.southeastasia.cloudapp.azure.com",
 				"port": "10004",
@@ -352,7 +352,8 @@ function constants(ENV) {
   };
 
   constants.defaultBankLoc = "CSFBSGSX";
-  constants.regulator = "MASGSGSG";
+  constants.regulator = "MASREGULATOR";
+  constants.MAS = "MASGSGSG";
   constants.currencySymbol = "S$";
   constants.error = "error";
   constants.platform = {
