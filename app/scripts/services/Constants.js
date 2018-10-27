@@ -9,7 +9,7 @@ function constants(ENV) {
 		"bankNodes": {
 			  "MASREGULATOR": {
                 			 	 "host": "127.0.0.1",
-                			 	 "port": "10003",
+                			 	 "port": "10006",
                 			 	 "bankName": "MAS Regulator",
                 			 	 "centralBank": false,
                 			 	 "regulator": true
