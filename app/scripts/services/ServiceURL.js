@@ -22,7 +22,8 @@ function serviceUrl(sharedDataServices, ENV, constants) {
 					"netting": sharedDataServices.getCurrentApi() + "/api/netting",
 					"settleQueue": sharedDataServices.getCurrentApi() + "/api/queue/settle",
 					"balanceAll": sharedDataServices.getCurrentApi() + "/api/bank/balance/all",
-					"moveFunds": sharedDataServices.getCurrentApi() + "/api/fund/interchannel/transfer"
+					"moveFunds": sharedDataServices.getCurrentApi() + "/api/fund/interchannel/transfer",
+					"enquiryAccName": sharedDataServices.getCurrentApi() + "/api/otherbank/queryAccountName"
 				}; 
 			} else {
 				return {

@@ -26,19 +26,46 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 		});
 	};
 
+	$scope.submitQueryAccName = function () {
+		httpService.get(serviceUrl.loadUrl().enquiryAccName).then(function (data) {
+			if (data !== constants.error) {
+				var response = angular.fromJson(data);
+				$scope.transfer.userReceiverAccName = response.accountName;
+			}
+		});
+	};
+
 	$scope.submitTransfer = function() {
 		$scope.submitPressed = true;
 		$scope.parentVariable.showSpinner = true;
-		httpService.post(serviceUrl.loadUrl().transfer, $scope.transfer).then(function (data) {
+		var transfer = {};
+        transfer.transactionAmount = $scope.transfer.transactionAmount;
+        transfer.receiver = $scope.transfer.receiver;
+        transfer.priority = $scope.transfer.priority;
+
+        var userContent = {};
+        userContent.accNo = $scope.transfer.userReceiverAccNo;
+        userContent.accName = $scope.transfer.userReceiverAccName;
+        userContent.userNote = $scope.transfer.userNote;
+
+        transfer.userContent = userContent;
+
+		httpService.post(serviceUrl.loadUrl().transfer,transfer).then(function (data) {
 			if (data === constants.error) {
 				$scope.transfer.transactionAmount = "";
 				$scope.transfer.receiver = '';
+				$scope.transfer.userReceiverAccNo = '';
+				$scope.transfer.userReceiverAccName = '';
+				$scope.transfer.userNote = '';
 				$scope.submitPressed = false;
 				$scope.parentVariable.showSpinner = false;
 			} else {
 				var trans = angular.fromJson(data);
 				$scope.transfer.transactionAmount = "";
 				$scope.transfer.receiver = "";
+                $scope.transfer.userReceiverAccNo = '';
+                $scope.transfer.userReceiverAccName = '';
+                $scope.transfer.userNote = '';
 				$scope.submitPressed = false;
 				$scope.parentVariable.showSpinner = false;
 				$rootScope.$broadcast('refresh');
