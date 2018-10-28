@@ -35,9 +35,13 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 		httpService.post(serviceUrl.loadUrl().enquiryAccName,accountReceiver).then(function (data) {
 			if (data !== constants.error) {
 				var response = angular.fromJson(data);
-				alert(data);
-				alert(data.accountName);
-				$scope.transfer.userReceiverAccName = data.accountName;
+				$scope.transfer.userReceiverAccName = response.data.accountName;
+                $scope.parentVariable.showSpinner = false;
+                $scope.submitPressedQueryAccName = false;
+			} else {
+                $scope.transfer.userReceiverAccName = "";
+                $scope.parentVariable.showSpinner = false;
+                $scope.submitPressedQueryAccName = false;
 			}
 		});
 	};
