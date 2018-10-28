@@ -93,7 +93,7 @@ function constants(ENV) {
   constants.regulator = "MASGSGSG";
   constants.centralBank = "MASGSGSG";
   constants.MAS = "MASGSGSG";
-  constants.currencySymbol = "S$";
+    constants.currencySymbol = "$";
   constants.error = "error";
   constants.platform = {
   	fabric: "Hyperledger Fabric",
