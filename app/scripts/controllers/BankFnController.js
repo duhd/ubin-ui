@@ -71,7 +71,6 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 				$scope.submitPressed = false;
 				$scope.parentVariable.showSpinner = false;
 			} else {
-				var trans = angular.fromJson(data);
 				$scope.transfer.transactionAmount = "";
 				$scope.transfer.receiver = "";
                 $scope.transfer.userReceiverAccNo = '';
