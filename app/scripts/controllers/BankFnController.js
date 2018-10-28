@@ -60,7 +60,7 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
         userContent.userNote = $scope.transfer.userNote;
 
         transfer.userContent = userContent.toString();
-
+        console.log(transfer);
 		httpService.post(serviceUrl.loadUrl().transfer,transfer).then(function (data) {
 			if (data === constants.error) {
 				$scope.transfer.transactionAmount = "";
