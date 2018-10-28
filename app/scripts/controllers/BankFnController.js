@@ -59,7 +59,7 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
         userContent.accName = $scope.transfer.userReceiverAccName;
         userContent.userNote = $scope.transfer.userNote;
 
-        transfer.userContent = userContent;
+        transfer.userContent = userContent.toString();
 
 		httpService.post(serviceUrl.loadUrl().transfer,transfer).then(function (data) {
 			if (data === constants.error) {
