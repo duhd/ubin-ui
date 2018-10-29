@@ -55,12 +55,14 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
         transfer.priority = $scope.transfer.priority;
 
         var userContent = {};
-        userContent.accNo = $scope.transfer.userReceiverAccNo;
-        userContent.accName = $scope.transfer.userReceiverAccName;
-        userContent.userNote = $scope.transfer.userNote;
+        userContent.receiverAccNo = $scope.transfer.userReceiverAccNo;
+        userContent.receiverAccName = $scope.transfer.userReceiverAccName;
+        userContent.senderAccNo = "12210000555678 ";
+        userContent.senderAccName = "Hoang Dinh Du"
+        userContent.senderNote = $scope.transfer.userNote;
 
         transfer.userContent = JSON.stringify(userContent);
-        console.log(transfer);
+        // console.log(transfer);
 		httpService.post(serviceUrl.loadUrl().transfer,transfer).then(function (data) {
 			if (data === constants.error) {
 				$scope.transfer.transactionAmount = "";
