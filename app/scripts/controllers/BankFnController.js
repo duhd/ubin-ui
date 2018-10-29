@@ -27,8 +27,8 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 	};
 
 	$scope.submitQueryAccName = function () {
-	    $scope.submitPressedQueryAccName = true;
-    	$scope.parentVariable.showSpinner = true;
+        // $scope.submitPressedQueryAccName = true;
+        // $scope.parentVariable.showSpinner = true;
     	var accountReceiver = {};
     	accountReceiver.accountNo = $scope.transfer.userReceiverAccNo;
     	accountReceiver.bic = $scope.transfer.receiver;
@@ -36,12 +36,12 @@ function bankFnController($scope, $rootScope, $state, httpService, serviceUrl, c
 			if (data !== constants.error) {
 				var response = angular.fromJson(data);
 				$scope.transfer.userReceiverAccName = response.data.accountName;
-                $scope.parentVariable.showSpinner = false;
-                $scope.submitPressedQueryAccName = false;
+                // $scope.parentVariable.showSpinner = false;
+                // $scope.submitPressedQueryAccName = false;
 			} else {
                 $scope.transfer.userReceiverAccName = "";
-                $scope.parentVariable.showSpinner = false;
-                $scope.submitPressedQueryAccName = false;
+                // $scope.parentVariable.showSpinner = false;
+                // $scope.submitPressedQueryAccName = false;
 			}
 		});
 	};
